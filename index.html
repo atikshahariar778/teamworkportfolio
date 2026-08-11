@@ -1,0 +1,1137 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Teamwork — Creative Digital Services</title>
+  <meta name="description" content="Teamwork provides professional graphic design, AI content, illustration, logo design, video editing, photo editing, e-commerce and website services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #070712;
+      --card: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --muted: #a7a7ba;
+      --pink: #ff3cac;
+      --purple: #784ba0;
+      --blue: #2b86c5;
+      --cyan: #00f2fe;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -10;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,60,172,.18), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(43,134,197,.18), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(120,75,160,.18), transparent 35%),
+        #070712;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: .45;
+      animation: float 12s ease-in-out infinite alternate;
+    }
+
+    .orb1 {
+      width: 280px;
+      height: 280px;
+      background: #ff3cac;
+      top: 5%;
+      left: -80px;
+    }
+
+    .orb2 {
+      width: 320px;
+      height: 320px;
+      background: #2b86c5;
+      right: -100px;
+      top: 30%;
+      animation-delay: 2s;
+    }
+
+    .orb3 {
+      width: 260px;
+      height: 260px;
+      background: #784ba0;
+      bottom: -80px;
+      left: 35%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      from {
+        transform: translate(0,0) scale(1);
+      }
+      to {
+        transform: translate(70px,-50px) scale(1.15);
+      }
+    }
+
+    /* Navbar */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(7,7,18,.72);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ddd;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff3cac;
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 13px;
+      background: linear-gradient(90deg,#ff3cac,#784ba0,#2b86c5);
+      box-shadow: 0 8px 30px rgba(255,60,172,.22);
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: auto;
+      padding: 150px 25px 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 9px 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      border-radius: 50px;
+      color: #ddd;
+      font-size: 13px;
+      margin-bottom: 25px;
+      backdrop-filter: blur(10px);
+    }
+
+    .badge span {
+      color: #ff3cac;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        #ff3cac,
+        #784ba0,
+        #2b86c5,
+        #00f2fe,
+        #ff3cac
+      );
+      background-size: 300%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradient 6s linear infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      padding: 15px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .3s;
+    }
+
+    .primary-btn {
+      color: white;
+      background: linear-gradient(90deg,#ff3cac,#784ba0,#2b86c5);
+      box-shadow: 0 15px 40px rgba(255,60,172,.2);
+    }
+
+    .secondary-btn {
+      color: white;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Hero Card */
+
+    .hero-card {
+      width: 350px;
+      min-width: 350px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 30px 100px rgba(0,0,0,.35);
+      transform: rotate(3deg);
+      animation: cardFloat 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes cardFloat {
+      from { transform: rotate(3deg) translateY(0); }
+      to { transform: rotate(-2deg) translateY(-18px); }
+    }
+
+    .hero-card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 12px;
+    }
+
+    .mini {
+      padding: 18px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .mini strong {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 5px;
+      color: #ff3cac;
+    }
+
+    /* Sections */
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title span {
+      color: #ff3cac;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(35px,5vw,55px);
+      margin-top: 12px;
+      letter-spacing: -2px;
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: 15px auto;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Services */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 27px;
+      min-height: 190px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--card);
+      backdrop-filter: blur(15px);
+      transition: .35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #ff3cac;
+      filter: blur(70px);
+      right: -50px;
+      bottom: -50px;
+      opacity: .25;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,60,172,.45);
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .service h3 {
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* Platforms */
+
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .platform {
+      padding: 15px 25px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      border-radius: 50px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .platform:hover {
+      transform: scale(1.05);
+      border-color: #ff3cac;
+    }
+
+    /* Skills */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .skill {
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .bar {
+      height: 7px;
+      background: rgba(255,255,255,.08);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(90deg,#ff3cac,#784ba0,#2b86c5);
+    }
+
+    /* Portfolio */
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .portfolio-card {
+      min-height: 240px;
+      border-radius: 22px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(135deg,rgba(255,60,172,.35),rgba(43,134,197,.15)),
+        rgba(255,255,255,.05);
+      transition: .35s;
+    }
+
+    .portfolio-card:nth-child(2) {
+      background:
+        linear-gradient(135deg,rgba(0,242,254,.28),rgba(120,75,160,.22)),
+        rgba(255,255,255,.05);
+    }
+
+    .portfolio-card:nth-child(3) {
+      background:
+        linear-gradient(135deg,rgba(120,75,160,.4),rgba(255,60,172,.18)),
+        rgba(255,255,255,.05);
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px) scale(1.015);
+    }
+
+    .portfolio-card h3 {
+      font-size: 22px;
+      margin-bottom: 7px;
+    }
+
+    .portfolio-card p {
+      color: #ddd;
+      font-size: 13px;
+    }
+
+    /* Certificates */
+
+    .certificates {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .certificate {
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+    }
+
+    .certificate .cert-icon {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .certificate h3 {
+      margin-bottom: 8px;
+    }
+
+    .certificate p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    /* CTA */
+
+    .cta {
+      max-width: 1100px;
+      margin: 70px auto;
+      padding: 80px 30px;
+      text-align: center;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle at 20% 30%,rgba(255,60,172,.25),transparent 35%),
+        radial-gradient(circle at 80% 70%,rgba(43,134,197,.25),transparent 35%),
+        rgba(255,255,255,.05);
+    }
+
+    .cta h2 {
+      font-size: clamp(35px,5vw,60px);
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 35px 25px;
+      text-align: center;
+      color: #888;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* Reveal Animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: all .8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media(max-width: 950px) {
+      .services {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content {
+        margin: auto;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .hero-card {
+        min-width: 300px;
+        width: 100%;
+        max-width: 420px;
+      }
+
+      .portfolio,
+      .certificates {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .services,
+      .skills,
+      .portfolio,
+      .certificates {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="nav-container">
+
+      <div class="logo">TEAMWORK.</div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a
+        class="nav-btn"
+        href="https://pro.fiverr.com/users/atik_shihab2003/manage_gigs"
+        target="_blank">
+        Hire Us on Fiverr
+      </a>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main id="home">
+
+    <div class="hero">
+
+      <div class="hero-content reveal">
+
+        <div class="badge">
+          ✦ <span>Creative Digital Team</span> • Ready to Work
+        </div>
+
+        <h1>
+          We Create.<br>
+          We Design.<br>
+          <span class="gradient-text">We Deliver.</span>
+        </h1>
+
+        <p>
+          Welcome to Teamwork — a creative digital team specializing in
+          graphic design, AI content, illustration, branding, video editing,
+          photo editing, e-commerce and modern digital solutions.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            href="https://pro.fiverr.com/users/atik_shihab2003/manage_gigs"
+            target="_blank"
+            class="primary-btn">
+            🚀 Hire Us on Fiverr
+          </a>
+
+          <a href="#services" class="secondary-btn">
+            Explore Services →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-card reveal">
+
+        <h3>Teamwork Studio ✦</h3>
+
+        <p>
+          Creative ideas transformed into professional digital work.
+        </p>
+
+        <div class="mini-grid">
+
+          <div class="mini">
+            <strong>10+</strong>
+            Services
+          </div>
+
+          <div class="mini">
+            <strong>AI</strong>
+            Creative
+          </div>
+
+          <div class="mini">
+            <strong>100%</strong>
+            Creative
+          </div>
+
+          <div class="mini">
+            <strong>24/7</strong>
+            Support
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <div class="section-title reveal">
+        <span>What We Do</span>
+        <h2>Our Creative Services</h2>
+        <p>
+          From visual design to AI-powered content and e-commerce solutions,
+          we help businesses build a strong digital presence.
+        </p>
+      </div>
+
+      <div class="services">
+
+        <div class="service reveal">
+          <div class="icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>Creative and professional designs for brands, businesses and social media.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">🤖</div>
+          <h3>AI Content</h3>
+          <p>AI-powered creative images, concepts, content and visual solutions.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">✏️</div>
+          <h3>Illustration</h3>
+          <p>Unique digital illustrations and creative artwork tailored to your ideas.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">👕</div>
+          <h3>T-Shirt Design</h3>
+          <p>Eye-catching custom t-shirt graphics for brands and print-on-demand.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">💎</div>
+          <h3>Logo Design</h3>
+          <p>Modern and memorable logos that help businesses build their identity.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">📸</div>
+          <h3>Photo Editing</h3>
+          <p>Professional photo enhancement, background editing and creative retouching.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">🎬</div>
+          <h3>Video Editing</h3>
+          <p>Engaging video edits for social media, YouTube, ads and digital content.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">🌐</div>
+          <h3>Website Creation</h3>
+          <p>Modern responsive websites designed for creators, businesses and brands.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">🎥</div>
+          <h3>AI Video Creation</h3>
+          <p>Creative AI-generated videos and visual content for digital platforms.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">🛒</div>
+          <h3>E-Commerce</h3>
+          <p>Product listing and online marketplace support for major platforms.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">💻</div>
+          <h3>Microsoft Office</h3>
+          <p>Professional documents, presentations, spreadsheets and office solutions.</p>
+        </div>
+
+        <div class="service reveal">
+          <div class="icon">📱</div>
+          <h3>Social Media Design</h3>
+          <p>Creative posts, banners, thumbnails and visual content for social platforms.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- E-COMMERCE -->
+
+    <section>
+
+      <div class="section-title reveal">
+        <span>E-Commerce</span>
+        <h2>Marketplace Experience</h2>
+        <p>
+          We also work with product listings, online sales and e-commerce
+          marketplace operations.
+        </p>
+      </div>
+
+      <div class="platforms reveal">
+
+        <div class="platform">🛍️ Noon</div>
+        <div class="platform">🍔 Talabat</div>
+        <div class="platform">🛒 Instashop</div>
+        <div class="platform">🚚 Deliveroo</div>
+        <div class="platform">🌐 Online Store</div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO -->
+
+    <section id="portfolio">
+
+      <div class="section-title reveal">
+        <span>Our Work</span>
+        <h2>Creative Portfolio</h2>
+        <p>
+          A selection of creative services Teamwork can provide for clients.
+        </p>
+      </div>
+
+      <div class="portfolio">
+
+        <div class="portfolio-card reveal">
+          <h3>Brand Identity</h3>
+          <p>Logo • Branding • Visual Identity</p>
+        </div>
+
+        <div class="portfolio-card reveal">
+          <h3>AI Creative</h3>
+          <p>AI Images • AI Video • Creative Concepts</p>
+        </div>
+
+        <div class="portfolio-card reveal">
+          <h3>Social Media</h3>
+          <p>Posts • Ads • Thumbnails • Banners</p>
+        </div>
+
+        <div class="portfolio-card reveal">
+          <h3>T-Shirt Design</h3>
+          <p>Custom Graphics • POD • Merchandise</p>
+        </div>
+
+        <div class="portfolio-card reveal">
+          <h3>Photo Editing</h3>
+          <p>Retouching • Background • Enhancement</p>
+        </div>
+
+        <div class="portfolio-card reveal">
+          <h3>Video Editing</h3>
+          <p>Reels • Shorts • YouTube • Ads</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+      <div class="section-title reveal">
+        <span>Our Expertise</span>
+        <h2>Skills & Expertise</h2>
+        <p>
+          Our team combines creative design skills with modern digital tools.
+        </p>
+      </div>
+
+      <div class="skills">
+
+        <div class="skill reveal">
+          <div class="skill-top">
+            <span>Graphic Design</span>
+            <span>95%</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width:95%"></div>
+          </div>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-top">
+            <span>AI Creative</span>
+            <span>92%</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width:92%"></div>
+          </div>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-top">
+            <span>Photo Editing</span>
+            <span>90%</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width:90%"></div>
+          </div>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-top">
+            <span>Video Editing</span>
+            <span>88%</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width:88%"></div>
+          </div>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-top">
+            <span>Illustration</span>
+            <span>90%</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width:90%"></div>
+          </div>
+        </div>
+
+        <div class="skill reveal">
+          <div class="skill-top">
+            <span>E-Commerce</span>
+            <span>85%</span>
+          </div>
+          <div class="bar">
+            <div class="fill" style="width:85%"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CERTIFICATES -->
+
+    <section>
+
+      <div class="section-title reveal">
+        <span>Learning & Skills</span>
+        <h2>Certificates & Knowledge</h2>
+        <p>
+          Continuous learning helps us improve our creative and digital skills.
+        </p>
+      </div>
+
+      <div class="certificates">
+
+        <div class="certificate reveal">
+          <div class="cert-icon">🎓</div>
+          <h3>Udemy Certificates</h3>
+          <p>
+            Online learning and professional courses covering modern digital
+            skills and creative tools.
+          </p>
+        </div>
+
+        <div class="certificate reveal">
+          <div class="cert-icon">💻</div>
+          <h3>Microsoft Office 365</h3>
+          <p>
+            Experience with documents, spreadsheets, presentations and
+            professional office workflows.
+          </p>
+        </div>
+
+        <div class="certificate reveal">
+          <div class="cert-icon">🤖</div>
+          <h3>AI Tools & Creative Tech</h3>
+          <p>
+            Modern AI-assisted workflows for images, videos, creative ideas
+            and digital content.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <div class="cta reveal" id="contact">
+
+      <h2>Have an idea?</h2>
+
+      <p>
+        Let's turn your idea into something creative, professional and
+        ready for the digital world.
+      </p>
+
+      <div class="buttons" style="justify-content:center">
+
+        <a
+          href="https://pro.fiverr.com/users/atik_shihab2003/manage_gigs"
+          target="_blank"
+          class="primary-btn">
+          🚀 Start a Project on Fiverr
+        </a>
+
+        <a href="#home" class="secondary-btn">
+          ↑ Back to Top
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 <strong>Teamwork</strong>. Creative Digital Services.
+    <br><br>
+    Designed with creativity & powered by ideas.
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealOnScroll = () => {
+
+      reveals.forEach(element => {
+
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 80) {
+          element.classList.add("active");
+        }
+
+      });
+
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+
+    revealOnScroll();
+
+  </script>
+
+</body>
+</html>
+```
