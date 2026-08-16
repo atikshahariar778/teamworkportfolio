@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Creation Showcase</title>
+  <style>
+    body {
+      background-color: #070712;
+      color: #ffffff;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+    }
 
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ff3cac;
+      font-size: 32px;
+    }
+
+    /* Grid Layout */
+    .website-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Website Card Styling */
+    .website-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .website-card:hover {
+      transform: translateY(-5px);
+      border-color: #00f2fe;
+    }
+
+    .website-card h2 {
+      color: #00f2fe;
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .website-card p {
+      color: #a7a7ba;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Visit Button Style */
+    .visit-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff3cac, #784ba0);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+    }
+
+    .visit-btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💻 Website Creation Portfolio</h1>
+
+  <div class="website-grid">
+    
+    <div class="website-card">
+      <div>
+        <h2>✨ Bloom & Shine</h2>
+        <p>E-commerce / Brand Showcase Website crafted for Bloom & Shine. Fully responsive design with modern visual aesthetic.</p>
+      </div>
+      <div>
+        <a href="https://bloomandshine08.github.io/bloomandshine/" target="_blank" class="visit-btn">Live Preview ↗</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
