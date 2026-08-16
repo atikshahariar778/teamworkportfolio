@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Audio & Showcase Gallery</title>
+  <style>
+    body {
+      background-color: #070712;
+      color: #ffffff;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+    }
 
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    h1 { color: #ff3cac; }
+    h2 { color: #00f2fe; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-top: 50px; }
+
+    /* Layout Grids */
+    .audio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto 50px auto;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .audio-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .image-card img:hover {
+      transform: translateY(-5px);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AI Creative Portfolio</h1>
+
+  <!-- SECTION 1: SOB AUDIO (Total 7-ta) -->
+  <h2>🎵 Audio Gallery (7 Tracks)</h2>
+  <div class="audio-grid">
+    
+    <div class="audio-card">
+      <h3>Audio Sample 1</h3>
+      <audio controls><source src="audio1.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="audio-card">
+      <h3>Audio Sample 2</h3>
+      <audio controls><source src="audio2.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="audio-card">
+      <h3>Audio Sample 3</h3>
+      <audio controls><source src="audio3.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="audio-card">
+      <h3>Audio Sample 4</h3>
+      <audio controls><source src="audio4.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="audio-card">
+      <h3>Audio Sample 5</h3>
+      <audio controls><source src="audio5.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="audio-card">
+      <h3>Audio Sample 6</h3>
+      <audio controls><source src="audio6.mp3" type="audio/mpeg"></audio>
+    </div>
+
+    <div class="audio-card">
+      <h3>Audio Sample 7</h3>
+      <audio controls><source src="audio7.mp3" type="audio/mpeg"></audio>
+    </div>
+
+  </div>
+
+
+  <!-- SECTION 2: SOB IMAGE (Total 10-ta) -->
+  <h2>🖼️ Image Gallery (10 Works)</h2>
+  <div class="image-grid">
+    
+    <div class="image-card"><img src="IMG_20260812_144918.jpg.jpeg" alt="Logo 1"></div>
+    <div class="image-card"><img src="SAVE_20260812_144646.jpg.jpeg" alt="Logo 2"></div>
+    <div class="image-card"><img src="logo d p 1 copy.jpg.jpeg" alt="Logo 3"></div>
+    <div class="image-card"><img src="20240511_011041.jpg.jpeg" alt="Logo 4"></div>
+    <div class="image-card"><img src="TEAMWORK.jpg.jpeg" alt="Logo 5"></div>
+    <div class="image-card"><img src="Picsart_25-12-09_02-03-16-691.jpg.jpeg" alt="Logo 6"></div>
+    <div class="image-card"><img src="image7.jpg" alt="Logo 7"></div>
+    <div class="image-card"><img src="image8.jpg" alt="Logo 8"></div>
+    <div class="image-card"><img src="image9.jpg" alt="Logo 9"></div>
+    <div class="image-card"><img src="image10.jpg" alt="Logo 10"></div>
+
+  </div>
+
+</body>
+</html>
