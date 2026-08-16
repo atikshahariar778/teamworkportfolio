@@ -360,7 +360,7 @@
 
     .service {
       padding: 27px;
-      min-height: 190px;
+      height: 100%;
       border: 1px solid var(--border);
       border-radius: 20px;
       background: var(--card);
@@ -368,6 +368,8 @@
       transition: .35s;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .service::after {
@@ -783,7 +785,7 @@
           <h3>Website Creation</h3>
           <p>Modern responsive websites designed for creators, businesses and brands.</p>
         </div></a>
-        
+
         <div class="service reveal">
           <div class="icon">🛒</div>
           <h3>E-Commerce</h3>
