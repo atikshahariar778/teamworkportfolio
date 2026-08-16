@@ -118,11 +118,23 @@
       padding: 0 25px;
     }
 
-    .logo img {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-      vertical-align: middle;
+    .logo {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 25px;
+     font-weight: 900;
+     letter-spacing: -1px;
+     background: linear-gradient(90deg, #ff3cac, #784ba0, #2b86c5);
+     -webkit-background-clip: text;
+     color: transparent;
+}
+
+.logo img {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+}
 }
 
     .nav-links {
